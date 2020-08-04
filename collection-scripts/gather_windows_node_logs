@@ -12,7 +12,7 @@ if [ -z "$WIN_NODES" ]; then
     exit 0
 fi
 
-echo INFO: Collecting logs for all Windows nodes
+echo "WARNING: Collecting one or more service logs on ALL Windows worker nodes in your cluster. This could take a large amount of time." >&2
 for log in ${LOGS[@]}; do
     LOG_DIR=${WINDOWS_NODE_LOGS}/$(dirname $log)
     mkdir -p ${LOG_DIR}
